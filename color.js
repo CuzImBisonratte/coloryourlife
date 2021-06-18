@@ -8,15 +8,19 @@ var colors = [
     [7, "orange"]
 ];
 var c = 0;
-const interval = setInterval(function() {
+
+function a() {
     if (c > 7) {
         c = 0;
     }
-    // console.log(document.getElementById("time").value);
+    console.log(document.getElementById("time").value);
     c++;
     colors.forEach(element => {
         if (c == element[0]) {
             document.body.style.backgroundColor = element[1];
         }
     });
-}, 250);
+    setTimeout(a, document.getElementById("time").value);
+}
+
+a();
